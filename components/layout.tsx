@@ -4,11 +4,11 @@ import Header from './header'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <>
+    <div className="bg-primary">
       <Header />
       <div>{children}</div>
       <Footer />
-    </>
+    </div>
   )
 }
 
