@@ -1,6 +1,6 @@
 import Lottie from 'react-lottie-player'
 
-import lottieJson from '../public/animation_llaidurc.json'
+import lottieJson from '../../public/animation_llaidurc.json'
 
 const Animation = () => {
   return (
