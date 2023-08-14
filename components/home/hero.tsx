@@ -1,3 +1,5 @@
+import Animation from './animation'
+
 const Hero = () => {
   return (
     <>
@@ -6,14 +8,24 @@ const Hero = () => {
           안녕하세요. 프론트엔드 개발자 이채욱입니다.
           <br className="hidden lg:inline-block" />
         </h1>
-        <p className="mb-8 leading-relaxed">이채욱의 포트폴리오 입니다.</p>
+        <p className="mb-8 leading-relaxed">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam,
+          officia laboriosam? Hic, magnam deleniti. Ea odit repudiandae qui
+          impedit culpa. Quaerat magnam corporis a odio voluptatem consectetur
+          cum asperiores exercitationem! Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit. Quidem aut provident veniam fugit accusantium eius,
+          quia illo repellat, quaerat eaque sunt vitae architecto facilis cum
+          explicabo corrupti facere eveniet doloremque.
+        </p>
         <div className="flex justify-center">
           <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             프로젝트 보러가기
           </button>
         </div>
       </div>
-      <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6" />
+      <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <Animation />
+      </div>
     </>
   )
 }
