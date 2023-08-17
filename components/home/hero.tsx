@@ -19,10 +19,7 @@ const Hero = () => {
           explicabo corrupti facere eveniet doloremque.
         </p>
         <div className="flex justify-center">
-          <Link
-            href="projects"
-            className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-          >
+          <Link href="projects" className="btn-project">
             프로젝트 보러가기
           </Link>
         </div>
