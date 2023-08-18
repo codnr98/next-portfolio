@@ -1,7 +1,21 @@
 import Layout from '@/components/layout'
 import Head from 'next/head'
+import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 
-const Projects = () => {
+type Repo = {
+  name: string
+  stargazers_count: number
+}
+
+export const getStaticProps: GetStaticProps<{
+  repo: Repo
+}> = async () => {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const repo = await res.json()
+  return { props: { repo } }
+}
+
+const Projects = ({ repo }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
       <Head>
