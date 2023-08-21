@@ -9,7 +9,7 @@ type Cover = {
   }
 }
 
-type Results = {
+export type Results = {
   id: string
   created_time: string
   last_edited_time: string
