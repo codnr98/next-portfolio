@@ -15,7 +15,7 @@ const Project = ({ projectsDates }: Props) => {
   const endDate = projectsDates.properties.workPeriod.date?.end
 
   return (
-    <div className="flex flex-col p-6 m-3 bg-slate-700 rounded-md">
+    <div className="flex flex-col p-6 m-3 bg-slate-700 rounded-md w-full ">
       <div className="w-full h-48 relative">
         <Image
           className=" rounded-md"
@@ -25,11 +25,13 @@ const Project = ({ projectsDates }: Props) => {
           objectFit="cover"
         />
       </div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <a href={githubUrl}>깃허브 바로가기</a>
-      <p>{startDate}</p>
-      <p>{endDate}</p>
+      <div className="flex flex-col p-1 w-full">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <a href={githubUrl}>깃허브 바로가기</a>
+        <p>{startDate}</p>
+        <p>{endDate}</p>
+      </div>
     </div>
   )
 }
