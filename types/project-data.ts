@@ -4,6 +4,7 @@ export type Repo = {
 
 type Cover = {
   type: string
+  file: { url: string }
   external: {
     url: string
   }

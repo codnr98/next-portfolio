@@ -6,7 +6,8 @@ type Props = {
 }
 const Project = ({ projectsDates }: Props) => {
   const title = projectsDates.properties.이름.title[0]?.text.content
-  const imageUrl = projectsDates.cover?.external?.url
+  const imageUrl =
+    projectsDates.cover?.external?.url || projectsDates.cover?.file?.url
   const description =
     projectsDates.properties.Description.rich_text[0]?.text.content
   const githubUrl = projectsDates.properties.Github.url
