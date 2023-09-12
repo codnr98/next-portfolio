@@ -13,24 +13,32 @@ const Project = ({ projectsDates }: Props) => {
   const githubUrl = projectsDates.properties.Github.url
   const startDate = projectsDates.properties.workPeriod.date?.start
   const endDate = projectsDates.properties.workPeriod.date?.end
+  const tags = projectsDates.properties.태그.multi_select
 
   return (
-    <div className="flex flex-col p-6 m-3 bg-slate-700 rounded-md w-full ">
+    <div className="project-card">
       <div className="w-full h-48 relative">
         <Image
-          className=" rounded-md"
+          className=" rounded-t-xl"
           src={imageUrl}
           alt="cover-image"
           fill
           objectFit="cover"
         />
       </div>
-      <div className="flex flex-col p-1 w-full">
+      <div className="flex flex-col p-3 w-full">
         <h1>{title}</h1>
         <p>{description}</p>
         <a href={githubUrl}>깃허브 바로가기</a>
         <p>{startDate}</p>
         <p>{endDate}</p>
+        <div className="flex gap-1">
+          {tags.map((tag) => (
+            <div className="tag" key={tag.id}>
+              {tag.name}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
