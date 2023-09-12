@@ -17,13 +17,12 @@ const Project = ({ projectsDates }: Props) => {
 
   return (
     <div className="project-card">
-      <div className="w-full h-48 relative">
+      <div className="w-full h-48  relative">
         <Image
-          className=" rounded-t-xl"
+          className="rounded-t-xl object-cover"
           src={imageUrl}
           alt="cover-image"
           fill
-          objectFit="cover"
         />
       </div>
       <div className="flex flex-col p-3 w-full">
@@ -32,7 +31,7 @@ const Project = ({ projectsDates }: Props) => {
         <a href={githubUrl}>깃허브 바로가기</a>
         <p>{startDate}</p>
         <p>{endDate}</p>
-        <div className="flex gap-1">
+        <div className="flex gap-1 overflow-auto scrollbar-hide">
           {tags.map((tag) => (
             <div className="tag" key={tag.id}>
               {tag.name}
