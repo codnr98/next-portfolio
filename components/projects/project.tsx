@@ -4,6 +4,7 @@ import Image from 'next/image'
 type Props = {
   projectsDates: Results
 }
+
 const Project = ({ projectsDates }: Props) => {
   const title = projectsDates.properties.이름.title[0]?.text.content
   const imageUrl =
@@ -17,7 +18,7 @@ const Project = ({ projectsDates }: Props) => {
 
   return (
     <div className="project-card">
-      <div className="w-full h-48  relative">
+      <div className="w-full h-48 relative">
         <Image
           className="rounded-t-xl object-cover"
           src={imageUrl}
@@ -25,12 +26,15 @@ const Project = ({ projectsDates }: Props) => {
           fill
         />
       </div>
-      <div className="flex flex-col p-3 w-full">
+      <div className="flex flex-col p-3 w-full gap-1">
         <h1>{title}</h1>
         <p>{description}</p>
         <a href={githubUrl}>깃허브 바로가기</a>
-        <p>{startDate}</p>
-        <p>{endDate}</p>
+        <div className="flex gap-1">
+          <p>{startDate}</p>
+          <p>→</p>
+          <p>{endDate}</p>
+        </div>
         <div className="flex gap-1 overflow-auto scrollbar-hide">
           {tags.map((tag) => (
             <div className="tag" key={tag.id}>
