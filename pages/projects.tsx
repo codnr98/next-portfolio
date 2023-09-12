@@ -23,9 +23,11 @@ const Projects = ({
         <meta name="description" content="codnr의 포트폴리오 입니다." />
       </Head>
       <h1>총 프로젝트 : {projects.results.length}</h1>
-      {projects.results.map((projectsDates) => (
-        <Project key={projectsDates.id} projectsDates={projectsDates} />
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {projects.results.map((projectsDates) => (
+          <Project key={projectsDates.id} projectsDates={projectsDates} />
+        ))}
+      </div>
     </Layout>
   )
 }

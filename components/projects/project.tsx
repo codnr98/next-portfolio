@@ -16,7 +16,15 @@ const Project = ({ projectsDates }: Props) => {
 
   return (
     <div className="flex flex-col p-6 m-3 bg-slate-700 rounded-md">
-      <Image src={imageUrl} alt="cover-image" width={100} height={60} />
+      <div className="w-full h-48 relative">
+        <Image
+          className=" rounded-md"
+          src={imageUrl}
+          alt="cover-image"
+          fill
+          objectFit="cover"
+        />
+      </div>
       <h1>{title}</h1>
       <p>{description}</p>
       <a href={githubUrl}>깃허브 바로가기</a>
