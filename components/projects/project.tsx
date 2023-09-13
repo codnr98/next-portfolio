@@ -18,7 +18,7 @@ const Project = ({ projectsDates }: Props) => {
 
   return (
     <div className="project-card">
-      <div className="w-full h-48 relative">
+      <div className="h-48 relative">
         <Image
           className="rounded-t-xl object-cover"
           src={imageUrl}
