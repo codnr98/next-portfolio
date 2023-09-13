@@ -3,15 +3,12 @@ import DarkModeToggleButton from './dark-mode-toggle-button'
 
 const Header = () => {
   return (
-    <header className="text-gray-600 body-font">
-      <div className="container flex flex-wrap p-5 flex-col md:flex-row items-center mx-auto">
-        <Link
-          href="/"
-          className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
-        >
-          <span className="text-xl">이채욱의 포트폴리오</span>
+    <header className="text-gray-600 body-font w-screen">
+      <div className="flex justify-between p-5 items-center">
+        <Link href="/" className="font-medium items-center text-gray-900">
+          <span className="text-xl">codnr</span>
         </Link>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center gap-4">
+        <nav className="flex items-center text-base gap-4">
           <Link href="/" className="hover:text-gray-900">
             홈
           </Link>
