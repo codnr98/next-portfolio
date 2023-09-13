@@ -26,21 +26,27 @@ const Project = ({ projectsDates }: Props) => {
           fill
         />
       </div>
+
       <div className="flex flex-col p-3 w-full gap-1">
         <h1>{title}</h1>
-        <p>{description}</p>
-        <a href={githubUrl}>깃허브 바로가기</a>
-        <div className="flex gap-1">
-          <p>{startDate}</p>
-          <p>→</p>
-          <p>{endDate}</p>
-        </div>
-        <div className="flex gap-1 overflow-auto scrollbar-hide">
-          {tags.map((tag) => (
-            <div className="tag" key={tag.id}>
-              {tag.name}
-            </div>
-          ))}
+
+        <div>
+          <p>{description}</p>
+          <a href={githubUrl}>깃허브 바로가기</a>
+
+          <div className="flex gap-1">
+            <p>{startDate}</p>
+            <p>→</p>
+            <p>{endDate}</p>
+          </div>
+
+          <div className="flex gap-1 overflow-auto scrollbar-hide">
+            {tags.map((tag) => (
+              <div className="tag" key={tag.id}>
+                {tag.name}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
