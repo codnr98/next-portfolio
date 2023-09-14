@@ -1,5 +1,6 @@
 import { Results } from '@/types/project-data'
 import Image from 'next/image'
+import React, { useEffect, useRef, useState } from 'react'
 
 type Props = {
   projectsDates: Results
@@ -15,6 +16,32 @@ const Project = ({ projectsDates }: Props) => {
   const startDate = projectsDates.properties.workPeriod.date?.start
   const endDate = projectsDates.properties.workPeriod.date?.end
   const tags = projectsDates.properties.태그.multi_select
+
+  // let slider: HTMLDivElement | null = null // ref'
+
+  const sliderRef = useRef<HTMLDivElement>(null)
+
+  const handleWheel = (e: WheelEvent) => {
+    e.preventDefault()
+    if (sliderRef.current) {
+      sliderRef.current.scrollLeft += e.deltaY
+    }
+  }
+
+  useEffect(() => {
+    const slider = sliderRef.current
+    if (slider) {
+      // Add event listener with passive option set to false
+      slider.addEventListener('wheel', handleWheel, {
+        passive: false,
+      })
+
+      // Clean up on unmount
+      return () => {
+        slider.removeEventListener('wheel', handleWheel)
+      }
+    }
+  }, [])
 
   return (
     <div className="project-card">
@@ -40,7 +67,10 @@ const Project = ({ projectsDates }: Props) => {
             <p>{endDate}</p>
           </div>
 
-          <div className="flex gap-1 overflow-auto scrollbar-hide">
+          <div
+            ref={sliderRef}
+            className="flex gap-1 overflow-auto scrollbar-hide"
+          >
             {tags.map((tag) => (
               <div className="tag" key={tag.id}>
                 {tag.name}
