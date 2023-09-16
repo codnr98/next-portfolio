@@ -1,6 +1,6 @@
 import { Results } from '@/types/project-data'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 type Props = {
   projectsDates: Results
@@ -16,8 +16,6 @@ const Project = ({ projectsDates }: Props) => {
   const startDate = projectsDates.properties.workPeriod.date?.start
   const endDate = projectsDates.properties.workPeriod.date?.end
   const tags = projectsDates.properties.태그.multi_select
-
-  // let slider: HTMLDivElement | null = null // ref'
 
   const sliderRef = useRef<HTMLDivElement>(null)
 
