@@ -12,7 +12,10 @@ const options = {
     'Notion-Version': '2022-06-28',
     'content-type': 'application/json',
   },
-  data: { page_size: 100 },
+  data: {
+    page_size: 100,
+    sorts: [{ property: 'workPeriod', direction: 'descending' }],
+  },
 }
 
 const loadProjects = async () => {
