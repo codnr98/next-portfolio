@@ -12,6 +12,8 @@
 
 .project-card {
   @apply flex flex-col rounded-xl w-auto
+          bg-slate-100
+          dark:bg-slate-900
           transition duration-300 transform border border-gray-300
           hover:scale-105
           hover:shadow-lg
