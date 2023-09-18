@@ -23,7 +23,9 @@ const Projects = ({
         <meta name="description" content="codnr의 포트폴리오 입니다." />
       </Head>
       <div className="flex flex-col justify-start items-start min-h-screen">
-        <h1>총 프로젝트 : {projects.results.length}</h1>
+        <h1 className="mb-4 text-xl">
+          총 프로젝트 : {projects.results.length}
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {projects.results.map((projectsDates) => (
