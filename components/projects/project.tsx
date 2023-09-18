@@ -32,6 +32,12 @@ const Project = ({ projectsDates }: Props) => {
     window.location.assign(url)
   }
 
+  const handleEnter = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter') {
+      window.location.assign(url)
+    }
+  }
+
   useEffect(() => {
     const slider = sliderRef.current
     if (slider) {
@@ -48,7 +54,13 @@ const Project = ({ projectsDates }: Props) => {
   }, [])
 
   return (
-    <div className="project-card" onClick={handleClick}>
+    <div
+      className="project-card"
+      onClick={handleClick}
+      onKeyDown={handleEnter}
+      role="button"
+      tabIndex={0}
+    >
       <div className="h-48 relative">
         <Image
           className="rounded-t-xl object-cover"
