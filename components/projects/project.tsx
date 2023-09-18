@@ -76,7 +76,9 @@ const Project = ({ projectsDates }: Props) => {
 
         <div>
           <p>{description}</p>
-          <a href={githubUrl}>깃허브 바로가기</a>
+          <a className="underline" href={githubUrl}>
+            깃허브 바로가기
+          </a>
 
           <div className="flex gap-1">
             <p>{startDate}</p>
