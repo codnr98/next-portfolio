@@ -51,6 +51,7 @@ const Project = ({ projectsDates }: Props) => {
         slider.removeEventListener('wheel', handleWheel)
       }
     }
+    return undefined
   }, [])
 
   return (
