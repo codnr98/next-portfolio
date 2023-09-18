@@ -1,5 +1,6 @@
 import { Results } from '@/types/project-data'
 import Image from 'next/image'
+
 import React, { useEffect, useRef } from 'react'
 
 type Props = {
@@ -16,6 +17,7 @@ const Project = ({ projectsDates }: Props) => {
   const startDate = projectsDates.properties.workPeriod.date?.start
   const endDate = projectsDates.properties.workPeriod.date?.end
   const tags = projectsDates.properties.태그.multi_select
+  const { url } = projectsDates
 
   const sliderRef = useRef<HTMLDivElement>(null)
 
@@ -24,6 +26,10 @@ const Project = ({ projectsDates }: Props) => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft += e.deltaY
     }
+  }
+
+  const handleClick = () => {
+    window.location.assign(url)
   }
 
   useEffect(() => {
@@ -42,7 +48,7 @@ const Project = ({ projectsDates }: Props) => {
   }, [])
 
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={handleClick}>
       <div className="h-48 relative">
         <Image
           className="rounded-t-xl object-cover"
