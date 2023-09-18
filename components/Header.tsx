@@ -15,8 +15,11 @@ const Header = () => {
           <Link href="projects" className="hover:text-gray-900">
             프로젝트
           </Link>
-          <Link href="about-me" className="hover:text-gray-900">
-            연락하기
+          <Link
+            href="https://splendorous-cobbler-a3d6d8.netlify.app/"
+            className="hover:text-gray-900"
+          >
+            Blog
           </Link>
           <DarkModeToggleButton />
         </nav>

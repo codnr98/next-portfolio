@@ -12,7 +12,8 @@ const Hero = () => {
         <p className="mb-8 leading-relaxed">
           안녕하세요, TypeScript, ReactJS 기반의 프론트엔드 개발자 입니다.
         </p>
-        <p className="mb-8 leading-relaxed" />
+        <p className="leading-relaxed">이메일 : wnd75913@gmail.com</p>
+        <p className="mb-8 leading-relaxed">거주지 : 서울특별시 관악구</p>
         <div className="flex justify-center">
           <Link href="projects" className="btn-project">
             프로젝트 보러가기
