@@ -18,12 +18,11 @@ const Projects = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      <div className="flex flex-col justify-start items-center min-h-screen">
-        <Head>
-          <title>codnr 포트폴리오</title>
-          <meta name="description" content="codnr의 포트폴리오 입니다." />
-        </Head>
-
+      <Head>
+        <title>codnr 포트폴리오</title>
+        <meta name="description" content="codnr의 포트폴리오 입니다." />
+      </Head>
+      <div className="flex flex-col justify-start items-start min-h-screen">
         <h1>총 프로젝트 : {projects.results.length}</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
