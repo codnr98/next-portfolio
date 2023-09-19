@@ -2,8 +2,9 @@ import Layout from '@/components/layout'
 import Head from 'next/head'
 import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import loadProjects from '@/apis/load-projects'
-import { Repo } from '@/types/project-data'
+import { Repo, Results } from '@/types/project-data'
 import Project from '@/components/projects/project'
+import { useEffect } from 'react'
 
 export const getStaticProps: GetStaticProps<{
   projects: Repo
@@ -13,9 +14,33 @@ export const getStaticProps: GetStaticProps<{
   return { props: { projects } }
 }
 
+type Tags = {
+  [index: string]: number
+}
+
 const Projects = ({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const getTags = (list: Results[]) => {
+    const result: Tags = {}
+    list.forEach((project) => {
+      const tags = project.properties.태그.multi_select
+      tags.forEach((element) => {
+        const tag = element.name
+        if (!result[tag]) {
+          result[tag] = 0
+        }
+        result[tag] += 1
+      })
+    })
+    console.log(result)
+    return result
+  }
+
+  useEffect(() => {
+    getTags(projects.results)
+  }, [projects])
+
   return (
     <Layout>
       <Head>
