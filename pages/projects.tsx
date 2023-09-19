@@ -4,7 +4,8 @@ import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import loadProjects from '@/apis/load-projects'
 import { Repo, Results } from '@/types/project-data'
 import Project from '@/components/projects/project'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import TagCounter from '@/components/projects/tag-counter'
 
 export const getStaticProps: GetStaticProps<{
   projects: Repo
@@ -21,6 +22,8 @@ type Tags = {
 const Projects = ({
   projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [tagCount, setTagCount] = useState<Tags>({})
+
   const getTags = (list: Results[]) => {
     const result: Tags = {}
     list.forEach((project) => {
@@ -33,12 +36,12 @@ const Projects = ({
         result[tag] += 1
       })
     })
-    console.log(result)
+    // console.log(result)
     return result
   }
 
   useEffect(() => {
-    getTags(projects.results)
+    setTagCount(getTags(projects.results))
   }, [projects])
 
   return (
@@ -48,6 +51,18 @@ const Projects = ({
         <meta name="description" content="codnr의 포트폴리오 입니다." />
       </Head>
       <div className="flex flex-col justify-start items-start min-h-screen">
+        <TagCounter tagCount={tagCount} />
+        <div>
+          {Object.entries(tagCount).map((tag, i) => {
+            return (
+              <div key={i}>
+                <p>{tag[0]}</p>
+                <p>{tag[1]}</p>
+              </div>
+            )
+          })}
+        </div>
+
         <h1 className="mb-4 text-xl">
           총 프로젝트 : {projects.results.length}
         </h1>
