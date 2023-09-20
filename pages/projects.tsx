@@ -54,7 +54,8 @@ const Projects = ({
         <h1 className="mb-4 text-xl">
           총 프로젝트 : {projects.results.length}
         </h1>
-        <div className="mb-2 w-full h-72">
+
+        <div className="flex mb-5 w-full md:h-80">
           <TagCounter tagCount={tagCount} />
         </div>
 
