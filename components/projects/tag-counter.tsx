@@ -17,7 +17,7 @@ type Props = {
 
 const TagCounter = ({ tagCount }: Props) => {
   const [tags, setTags] = useState<[string, number][]>([])
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
 
   const sortObject = (obj: { [index: string]: number }) => {
     return Object.entries(obj).sort((a, b) => b[1] - a[1])
@@ -79,7 +79,6 @@ const TagCounter = ({ tagCount }: Props) => {
 
   useEffect(() => {
     setTags(sortObject(tagCount))
-    console.log(tags)
   }, [tagCount])
 
   return <Bar options={options} data={data} />
