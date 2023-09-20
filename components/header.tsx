@@ -3,8 +3,8 @@ import DarkModeToggleButton from './dark-mode-toggle-button'
 
 const Header = () => {
   return (
-    <header className="text-gray-600 body-font w-screen">
-      <div className="flex justify-between p-5 items-center">
+    <header className="text-gray-600 body-font w-screen sticky top-0 z-10">
+      <div className="flex justify-between p-5 items-center shadow-md bg-primary opacity-90">
         <Link href="/" className="font-medium items-center text-gray-900">
           <span className="text-xl">codnr</span>
         </Link>
