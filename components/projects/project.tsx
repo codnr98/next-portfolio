@@ -63,14 +63,15 @@ const Project = ({ projectsDates, index }: Props) => {
       role="button"
       tabIndex={0}
     >
-      <div className="h-48 relative">
+      <div className="h-48 relative overflow-hidden">
         <Image
           className="rounded-t-xl object-cover"
           src={imageUrl}
           alt="cover-image"
+          // width={700}
+          // height={700}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={index >= 2}
+          sizes="100vh"
         />
       </div>
 
