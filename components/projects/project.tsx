@@ -5,10 +5,9 @@ import React, { useEffect, useRef } from 'react'
 
 type Props = {
   projectsDates: Results
-  index: number
 }
 
-const Project = ({ projectsDates, index }: Props) => {
+const Project = ({ projectsDates }: Props) => {
   const title = projectsDates.properties.이름.title[0]?.text.content
   const imageUrl =
     projectsDates.cover?.external?.url || projectsDates.cover?.file?.url
