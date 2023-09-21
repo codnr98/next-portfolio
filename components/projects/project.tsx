@@ -5,9 +5,10 @@ import React, { useEffect, useRef } from 'react'
 
 type Props = {
   projectsDates: Results
+  index: number
 }
 
-const Project = ({ projectsDates }: Props) => {
+const Project = ({ projectsDates, index }: Props) => {
   const title = projectsDates.properties.이름.title[0]?.text.content
   const imageUrl =
     projectsDates.cover?.external?.url || projectsDates.cover?.file?.url
@@ -69,7 +70,7 @@ const Project = ({ projectsDates }: Props) => {
           alt="cover-image"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority
+          priority={index >= 2}
         />
       </div>
 

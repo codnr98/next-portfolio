@@ -60,8 +60,12 @@ const Projects = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {projects.results.map((projectsDates) => (
-            <Project key={projectsDates.id} projectsDates={projectsDates} />
+          {projects.results.map((projectsDates, index) => (
+            <Project
+              key={projectsDates.id}
+              projectsDates={projectsDates}
+              index={index}
+            />
           ))}
         </div>
       </div>
