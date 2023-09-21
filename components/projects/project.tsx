@@ -68,8 +68,6 @@ const Project = ({ projectsDates, index }: Props) => {
           className="rounded-t-xl object-cover"
           src={imageUrl}
           alt="cover-image"
-          // width={700}
-          // height={700}
           fill
           sizes="100vh"
         />

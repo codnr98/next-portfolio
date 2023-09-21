@@ -70,7 +70,6 @@ const TagCounter = ({ tagCount }: Props) => {
       {
         color: 'rgb(186 230 253)',
         label: '',
-        fill: true,
         data: tags?.map((e) => e[1]),
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
