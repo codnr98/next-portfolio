@@ -33,6 +33,7 @@ const TagCounter = ({ tagCount }: Props) => {
   )
 
   const options = {
+    fill: false,
     indexAxis: 'y' as const,
     elements: {
       bar: {
