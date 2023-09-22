@@ -69,6 +69,7 @@ const Project = ({ projectsDates }: Props) => {
           alt="cover-image"
           fill
           sizes="100vh"
+          loading="eager"
         />
       </div>
 
