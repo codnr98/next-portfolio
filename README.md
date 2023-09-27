@@ -1,6 +1,7 @@
 ## 소개
 ### codnr Portfolio
-<img width="600" alt="스크린샷 2023-09-20 오후 6 27 39" src="https://github.com/codnr98/next-portfolio/assets/97998938/b4082b73-f04e-4ad8-b150-57bd2af26cc3">
+<img width="1667" alt="스크린샷 2023-09-27 오후 3 54 57" src="https://github.com/codnr98/next-portfolio/assets/97998938/2c57d201-16e6-47a8-a4e8-e3d8c2a825ca">
+
 
 Notion API를 활용한 NextJS 기반 포트폴리오 사이트 입니다.
 
