@@ -22,9 +22,9 @@ Notion API를 활용한 NextJS 기반 포트폴리오 사이트 입니다.
 
 ## 구현기능
 ### Dark Mode 구현
-next-themes 라이브러리를 사용하여 Dark Mode를 구현하였다.
+next-themes 라이브러리를 사용하여 Dark Mode를 구현하였습니다.
 
-`_app.tsx`파일의 `<Component>`태그의 상위에 `<ThemeProvider>` 태그를 위치시켜 프로젝트 어디에서든 Theme을 사용할 수 있도록 설정한다.
+`_app.tsx`파일의 `<Component>`태그의 상위에 `<ThemeProvider>` 태그를 위치시켜 프로젝트 어디에서든 Theme을 사용할 수 있도록 설정하였습니다.
 ```jsx
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -36,7 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 }
 ```
 
-next-themes에서 제공하는 `useTheme()` 훅을 사용하여 theme의 상태를 관리하고 접근할 수 있다.
+next-themes에서 제공하는 `useTheme()` 훅을 사용하여 theme의 상태를 관리하고 접근할 수 있습니다.
 ```jsx
 const DarkModeToggleButton = () => {
   const { theme, setTheme } = useTheme()
@@ -65,9 +65,9 @@ const DarkModeToggleButton = () => {
 ```
 
 ### Notion API를 통해 프로젝트 데이터 불러오기
-이 프로젝트에서는 Notion에서 제공하는 Notion API를 통해서 포트폴리오의 정보를 담을 DB와 API를 구현하였다.
+이 프로젝트에서는 Notion에서 제공하는 Notion API를 통해서 포트폴리오의 정보를 담을 DB와 API를 구현하였습니다.
 
-먼저 프로젝트와 Notion Databases를 연동을 위해 Notion 토큰과 해당 포트폴리오의 Database의 ID 값을 환경변수로 받아와 REST API 요청을 인증하는데 사용한다.
+먼저 프로젝트와 Notion Databases를 연동을 위해 Notion 토큰과 해당 포트폴리오의 Database의 ID 값을 환경변수로 받아와 REST API 요청을 인증하는데 사용합니다.
 ```jsx
 const options = {
   method: 'POST',
@@ -84,12 +84,12 @@ const options = {
   },
 }
 ```
-API 요청의 Body Params에 데이터를 받아오는 조건을 담을 수 있다.
+API 요청의 Body Params에 데이터를 받아오는 조건을 담을 수 있습니다.
 
 ### Chart.js를 통해 프로젝트에 사용된 기술스택을 그래프로 표시
 <img width="941" alt="스크린샷 2023-09-20 오후 6 27 56" src="https://github.com/codnr98/next-portfolio/assets/97998938/f26f89d1-81e2-4656-832e-f2423b83c5dc">
 
-Notion API를 통해 받은 포트폴리오의 데이터에서 기술스택 태그의 정보만 가져와 객체에 담은 후 내림차순으로 정렬하였다.
+Notion API를 통해 받은 포트폴리오의 데이터에서 기술스택 태그의 정보만 가져와 객체에 담은 후 내림차순으로 정렬하였습니다.
 ```jsx
 const getTags = (list: Results[]) => {
     const result: Tags = {}
@@ -113,7 +113,7 @@ const sortObject = (obj: { [index: string]: number }) => {
   }
 ```
 
-기술스택의 이름은 그래프의 y축의 labels에 담고 막대로 표시할 데이터에 기술스택의 사용횟수를 담아 그래프를 구현하였다.
+기술스택의 이름은 그래프의 y축의 labels에 담고 막대로 표시할 데이터에 기술스택의 사용횟수를 담아 그래프를 구현하였습니다.
 ```jsx
 const labels = tags?.map((e) => e[0])
 
