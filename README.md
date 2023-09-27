@@ -1,5 +1,7 @@
 ## 소개
 ### codnr Portfolio
+<img width="600" alt="스크린샷 2023-09-20 오후 6 27 39" src="https://github.com/codnr98/next-portfolio/assets/97998938/b4082b73-f04e-4ad8-b150-57bd2af26cc3">
+
 Notion API를 활용한 NextJS 기반 포트폴리오 사이트 입니다.
 
 <br/>
@@ -84,6 +86,8 @@ const options = {
 API 요청의 Body Params에 데이터를 받아오는 조건을 담을 수 있다.
 
 ### Chart.js를 통해 프로젝트에 사용된 기술스택을 그래프로 표시
+<img width="941" alt="스크린샷 2023-09-20 오후 6 27 56" src="https://github.com/codnr98/next-portfolio/assets/97998938/f26f89d1-81e2-4656-832e-f2423b83c5dc">
+
 Notion API를 통해 받은 포트폴리오의 데이터에서 기술스택 태그의 정보만 가져와 객체에 담은 후 내림차순으로 정렬하였다.
 ```jsx
 const getTags = (list: Results[]) => {
