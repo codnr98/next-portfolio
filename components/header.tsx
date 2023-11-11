@@ -16,17 +16,17 @@ const Header = () => {
             프로젝트
           </Link>
           <Link
-            href="https://splendorous-cobbler-a3d6d8.netlify.app/"
+            href="https://codnr98blog.netlify.app/"
             className="hover:text-gray-900"
           >
             Blog
           </Link>
-          <Link
+          {/* <Link
             href="https://www.canva.com/design/DAFnjLuIVQs/fuZSl7sq0mi6kdvlaokdig/view?utm_content=DAFnjLuIVQs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
             className="hover:text-gray-900"
           >
             자소서
-          </Link>
+          </Link> */}
           <DarkModeToggleButton />
         </nav>
       </div>
