@@ -11,9 +11,9 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com',
+        hostname: 'prod-files-secure.s3.us-west-2.amazonaws.com',
         port: '',
-        pathname: '/**',
+        pathname: '/37916ca4-6cf3-44b7-8a6a-ed4f43e55de7/**',
       },
     ],
   },
